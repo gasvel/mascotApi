@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :posts
-  resources :users
+  get '/posts/list', to: "posts#list"
+
+  resources :users do
+    resources :posts
+  end
 
 end
